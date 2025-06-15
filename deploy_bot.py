@@ -3,7 +3,7 @@ import time
 import random
 import json
 from web3 import Web3
-from web3.middleware import geth_poa_middleware
+#from web3.middleware import geth_poa_middleware
 from dotenv import load_dotenv
 from solcx import compile_standard, install_solc
 from decimal import Decimal
@@ -37,8 +37,8 @@ w3 = Web3(Web3.HTTPProvider(WEB3_PROVIDER_URL))
 
 # For PoA chains like Sepolia, Goerli, you might need this middleware
 # Check chain ID: Sepolia (11155111), Goerli (5), Mainnet (1)
-if w3.eth.chain_id in [11155111, 5]: # Replace with Pharos Testnet ID if different and it's PoA
-    w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+#if w3.eth.chain_id in [11155111, 5]: # Replace with Pharos Testnet ID if different and it's PoA
+ #   w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 
 
 if not w3.is_connected():
