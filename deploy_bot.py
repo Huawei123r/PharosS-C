@@ -49,7 +49,8 @@ print(f"Connected to Ethereum network: Chain ID {w3.eth.chain_id}")
 
 # --- Account Setup ---
 try:
-    account = w3.eth.account.from_private_key(PRIVATE_KEY)
+   
+    account = Account.from_key(PRIVATE_KEY)
     w3.eth.default_account = account.address
     print(f"Deployment account: {account.address}")
     balance_wei = w3.eth.get_balance(account.address)
